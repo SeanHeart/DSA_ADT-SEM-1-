@@ -42,6 +42,27 @@ List deletePos(List L, int position){
     return L;
 }
 
+int locate(List L, int data){
+    for(int i=0; i<L.count; i++){
+        if(L.elem[i] == data){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+List insertSorted(List L, int data){
+    //count should not be equal to length
+    if(L.count == MAX){
+        printf("Array is full!\n");
+    }
+    
+    for(int i=0; i<L.count; i++){
+
+    }
+}
+
 void display(List L){
     printf("elem: ");
     for(int i=0; i<L.count; i++){
@@ -60,7 +81,7 @@ int main(){
     L = initialize(L);
 //    printf("count is %d", L.count);
 
-    printf("Before: \n");
+    printf("\nBefore: \n");
     L = insertPos(L, 1, 0);
     L = insertPos(L, 3, 1);
     L = insertPos(L, 2, 2);
@@ -78,6 +99,13 @@ int main(){
     printf("Deleted\n");
     L = deletePos(L, 0);
     display(L);
+
+    printf("\n");
+
+    printf("Locate\n");
+    printf("Search for the postion of 670\n");
+    printf("%d\n", locate(L, 670));
+    
  
 
     return 0;
