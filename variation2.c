@@ -45,6 +45,23 @@ int locate(EPtr L, int data){
     return -1;
 }
 
+int retrieve(EPtr L, int position){
+    if(position < 0 || position >= L->count){
+        printf("Invalid position!");
+        return -1;
+    }
+    return L->elem[position];
+}
+
+void insertSorted(EPtr L, int data){
+    //count should not be equal to length
+    if(L->count == MAX){
+        printf("Array is full!\n");
+    }
+
+    for
+}
+
 
 void display(EPtr L){
     printf("elem: ");
@@ -87,6 +104,13 @@ int main()
     printf("Search for the position of 5\n");
     printf("%d\n", locate(L, 5));
 
+    printf("\n");
+    
+    printf("Retrieve element 4\n");
+    printf("%d\n", retrieve(L, 1));
+
 
     return 0;
 }
+
+//Status: Still working on it
