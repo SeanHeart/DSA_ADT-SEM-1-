@@ -59,7 +59,27 @@ void insertSorted(EPtr L, int data){
         printf("Array is full!\n");
     }
 
-    for
+    int position = 0;
+
+    //find the posiiton as to where the data should go
+    while(position < L->count && L->elem[position] < data){
+        position++;
+    }
+
+    //shift elements to the right
+    for(int i=L->count; i>position; i--){
+        L->elem[i] = L->elem[i-1];
+    }
+
+    //insert new element
+    L->elem[position] = data;
+    L->count++;
+
+    //return L->elem[position];
+}
+
+void makeNULL(EPtr L){
+    
 }
 
 
@@ -108,6 +128,21 @@ int main()
     
     printf("Retrieve element 4\n");
     printf("%d\n", retrieve(L, 1));
+
+    printf("\n");
+    
+    printf("Insert Sorted\n");
+    printf("Before:\n");
+    insertPos(L, 1, 0);
+    insertPos(L, 3, 1);
+    insertPos(L, 5, 2);
+    insertPos(L, 10, 3);
+    display(L);
+
+    insertSorted(L, 8);
+    printf("After:\n");
+    display(L);
+
 
 
     return 0;
