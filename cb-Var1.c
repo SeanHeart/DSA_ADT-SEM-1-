@@ -29,7 +29,7 @@ int allocSpace(VHeap* V){
     if(ret != -1){
         V->avail = V->H[ret].next;
     }
-    return 0;
+    return ret;
 }
 
 void deallocSpace(VHeap* V, int index){
@@ -61,6 +61,32 @@ void insertLast(int* L, VHeap* V, int elem){
     }
 }
 
+// void insertSorted(int* L, VHeap* V, int elem){
+
+// }
+
+void delete(int* L, VHeap* V, int elem){
+    int *trav, temp;
+    trav = L;
+    while(*trav != -1 && V->H[*trav].elem != elem){
+        trav = &V->H[*trav].next;
+    }
+    if(*trav != -1){
+        temp = *trav;
+        *trav = V->H[*trav].next;
+        deallocSpace(V, temp);
+    }
+}
+
+// void deleteAllOccurrence(int* L, VHeap* V, int elem)
+
+void display(int L, VHeap V){
+    for(; L != -1; L = V.H[L].next){
+        printf("%d ", V.H[L].elem);
+    }
+
+}
+
 int main()
 {
     VHeap VH;
@@ -75,12 +101,19 @@ int main()
     insertFirst(&L, &VH, 40);
 
     //print the list
-    printf("List elements: ");
-    for(int trav = L; trav!= -1; trav = VH.H[trav].next){
-        printf("%d ", VH[trav].elem);
-    }
+    printf("List elements: \t");
+    display(L, VH);
+
+    //deleted
+    printf("\nDeleted elements: ");
+    delete(&L, &VH, 30);
+    display(L, VH);
+
+    
 
     printf("\n");
 
     return 0;
 }
+
+//Status: Lacking insertSorted() and deleteAllOccurrence()
