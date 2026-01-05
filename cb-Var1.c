@@ -61,6 +61,8 @@ void insertLast(int* L, VHeap* V, int elem){
     }
 }
 
+void insertPos(int* L, VHeap* V, int elem);)
+
 // void insertSorted(int* L, VHeap* V, int elem){
 
 // }
@@ -116,4 +118,4 @@ int main()
     return 0;
 }
 
-//Status: Lacking insertSorted() and deleteAllOccurrence()
+//Status: Lacking insertSorted() and deleteAllOccurrence() ahhh
