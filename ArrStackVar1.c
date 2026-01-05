@@ -44,17 +44,30 @@ void push(Stack* s, int value){
     s->items[s->top] = value;   //store value at new top
 }
 
-// int pop(Stack* s){
-//     //check if stack is empty
-//     if(isEmpty(s)){
-//         printf("Stack is empty!");
-//     }else{
-//         printf("Stack has elements.\n");
-//     }
 
-//     //get the value at the current top of the stack
-//     // for(int i=MAX)
-// }
+int pop(Stack* s){
+    if(isEmpty(s)){
+        printf("Error: Stack underflow!\n");
+        return -1; //return -1 if empty
+    }
+
+    int value = s->items[s->top]; //get the top value
+    s->top--;                     //move top down
+    return value;                 //return the popped value
+}
+
+int peek(Stack* s){
+    if(isEmpty(s)){
+        printf("Error: Stack is empty!\n");
+        return -1; //return -1 if empty
+    }
+
+    return s->items[s->top]; //return the top value without removing it
+}
+
+int top(Stack* s){
+    return s->top;
+}
 
 
 void display(Stack* s){
@@ -64,7 +77,7 @@ void display(Stack* s){
 
     for(int i=s->top; i>=0; i--){
         if(i == s->top){
-            printf("[%d] :%d <- top\n", i, s->items[i]);
+            printf("[%d] : %d <- top\n", i, s->items[i]);
         }else{
             printf("[%d] : %d\n", i, s->items[i]);
         }
@@ -81,29 +94,24 @@ int main()
     //initialize()
     printf("STACK INITALIZATION\nTop = %d\n", S->top);
 
-    // //check if full
-    // if(isFull(S)){
-    //     printf("Stack is full!\n");
-    // }else{
-    //     printf("Stack is not full.\n");
-    // }
-
-    // //check if empty
-    // if(isEmpty(S)){
-    //     printf("Stack is empty!\n");
-    // }else{
-    //     printf("Stack has elements.\n");
-    // }
-
     //PUSH
-    push(S, 10);
-    push(S, 20);
-    push(S, 30);
+    push(S, 1);
+    push(S, 3);
+    push(S, 2);
+    push(S, 5);
 
     display(S);
+
+    printf("\nPEEK: %d\n", peek(S));
+    printf("POP: %d\n", pop(S));
+
+    printf("\nAfter POP:\n");
+    display(S);
+
+    printf("\nCurrent top index: %d\n", top(S));
 
     free(S);    //clean up memory
 
     return 0;
 }
-//Humm
+//DONE6
