@@ -124,6 +124,8 @@ int main(){
 
     printf("Insert Sorted\n");
     printf("Before:\n");
+    display(L);
+    
     L = insertPos(L, 1, 0);
     L = insertPos(L, 3, 1);
     L = insertPos(L, 5, 2);
@@ -140,4 +142,4 @@ int main(){
     return 0;
 }
 
-//Update [09-02-2025]: goods na i think
+//DONE
