@@ -79,7 +79,7 @@ void insertSorted(EPtr L, int data){
 }
 
 void makeNULL(EPtr L){
-    
+    L->count = 0;
 }
 
 
@@ -148,4 +148,4 @@ int main()
     return 0;
 }
 
-//Status: Still working on it ahsdsa
+//DONE2
