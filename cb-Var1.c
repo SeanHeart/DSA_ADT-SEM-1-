@@ -61,7 +61,7 @@ void insertLast(int* L, VHeap* V, int elem){
     }
 }
 
-void insertPos(int* L, VHeap* V, int elem);)
+//void insertPos(int* L, VHeap* V, int elem);
 
 // void insertSorted(int* L, VHeap* V, int elem){
 
@@ -80,7 +80,7 @@ void delete(int* L, VHeap* V, int elem){
     }
 }
 
-// void deleteAllOccurrence(int* L, VHeap* V, int elem)
+// void deleteAllOccurrence(int* L, VHeap* V, int elem);
 
 void display(int L, VHeap V){
     for(; L != -1; L = V.H[L].next){
@@ -118,4 +118,4 @@ int main()
     return 0;
 }
 
-//Status: Lacking insertSorted() and deleteAllOccurrence() ahhh
+//Status: Lacking insertSorted() and deleteAllOccurrence() ahhhmam
